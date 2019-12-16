@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .center {
+  margin: auto;
+  width: 60%;
+padding: 10px;
+}
+          body {
+        background-color: #040227;
+        
+      }
+      p{
+          color: white;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      }
+      </style>
+    <title>Login</title>
+</head>
+<body>
+<form>
+        <div class="center">
+                <center><label for="pswd"><p>Enter your password:</p>> </label>
+                    <input type="password" id="pswd">
+                    <input type="button" value="Submit" onclick="checkPswd();" />
+                </form></center>
+            </div>
+    
+
+
+<script type="text/javascript">
+    function checkPswd() {
+        var confirmPassword = "password";
+        var password = document.getElementById("pswd").value;
+        if (password == confirmPassword) {
+             window.location="welcome.html";
+        }
+        else{
+            alert("Passwords do not match.");
+        }
+    }
+</script>
+</body>
+</html>
