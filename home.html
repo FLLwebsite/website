@@ -3,6 +3,18 @@
   <head>
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <style>
+      .clockStyle {
+	background-color:#000;
+	border:#999 2px inset;
+	padding:6px;
+	color:#0FF;
+	font-family:"Arial Black", Gadget, sans-serif;
+    font-size:16px;
+    font-weight:bold;
+	letter-spacing: 2px;
+	display:inline;
+
+}
 
         .dropbtn {
   background-color: #c3d2e5;
@@ -144,7 +156,36 @@ color: #03dac5;
     
   </head>
     <body>
-            
+      <div id="clockDisplay" class="clockStyle"></div>
+<center><script>
+function renderTime() {
+	var currentTime = new Date();
+	var time = "AM";
+	var h = currentTime.getHours();
+	var m = currentTime.getMinutes();
+    var s = currentTime.getSeconds();
+	setTimeout('renderTime()',1000);
+    if (h == 0) {
+		h = 12;
+	} else if (h > 12) { 
+		h = h - 12;
+		time="PM";
+	}
+	if (h < 10) {
+		h = "0" + h;
+	}
+	if (m < 10) {
+		m = "0" + m;
+	}
+	if (s < 10) {
+		s = "0" + s;
+	}
+    var myClock = document.getElementById('clockDisplay');
+	myClock.textContent = h + ":" + m + ":" + s + " " + time;
+	myClock.innerText = h + ":" + m + ":" + s + " " + time;
+}
+renderTime();
+</script>      
       
   
   
