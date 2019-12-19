@@ -8,7 +8,7 @@
         padding: 0;
         height: 100vh;
         font-family: sans-serif;
-        background-image: url('http://i.stack.imgur.com/kx8MT.gif');
+        background-image: url("bg.jpg");
         background-size: cover;
       }
       .login-box{
@@ -69,7 +69,7 @@
   <h1>Login</h1>
   <div class="textbox">
     <i class="fas fa-user"></i>
-    <input type="text" placeholder="Username">
+    <input type="text" placeholder="Username" id="usr">
   </div>
 
   <div class="textbox">
@@ -77,17 +77,27 @@
     <input type="password" placeholder="Password" id="pswd">
   </div>
 
-  <input type="button" class="btn" value="Sign in" onclick="checkPswd();">
+  <input type="button" class="btn" value="Sign in" onclick="checkUsr();">
 </div>
 <script type="text/javascript">
+  function checkUsr() {
+      var confirmUsername = "admin";
+      var username = document.getElementById("usr").value;
+      if (username == confirmUsername) {
+          checkPswd();
+      }
+      else{
+        alert("Wrong Username");
+      }
+  }
   function checkPswd() {
-      var confirmPassword = "password";
+      var confirmPassword = " ";
       var password = document.getElementById("pswd").value;
       if (password == confirmPassword) {
           window.open("https://sitecher.github.io/website/home.html", "_self");
       }
       else{
-          alert("Passwords do not match.");
+        alert("Wrong Password"); 
       }
   }
 </script>
